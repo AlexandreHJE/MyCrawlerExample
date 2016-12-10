@@ -25,9 +25,9 @@ public class FacebookExample {
 		// [query sample]
 		// search?fields=name,id,likes,talking_about_count&limit=1000&q=靠北&type=page
 		String uri = 
-				"https://graph.facebook.com/v2.5"
-				+ "/search?q=%E9%9D%A0%E5%8C%97&type=page&limit=1000&fields=name,id,likes,talking_about_count"
-				+ "&access_token=EAACEdEose0cBAMzLyMlMxZAY73J1TBiZAHJhrF8du8fLhMmGYrUA3W9ezJDQk9oZAa07o4F2drZAL2k1cCtgdpl5LZClZCo6733A3xddNbjSAoTxEZBWY4rKnzLWTU3I0KMgT0qsw6eIRfdzg9RZCIkuTZCtGZCyzct657fywQpsFCNAZDZD";
+				"https://graph.facebook.com/v2.8/"
+				+ "/search?q=%E9%9D%A0%E5%8C%97&type=page&limit=10&fields=name,id,fan_count,talking_about_count"
+				+ "&access_token=EAACEdEose0cBAB61ToGx103jmDBLd42UkDVKBiTPYxDBfA3wEpiPwHHae4XqZBXfha1vNv8OM21bzzb7S1I4K3POZCxjcMrbXDpCdXfsR7V6IGV3iY7urC93JbSWfsr2XBblmndty8B6rZCFZBvWVDMElPyGEjLdHBSxEKLxEQZDZD";
 
 
 
@@ -54,7 +54,7 @@ public class FacebookExample {
 		for( Element data: elems ){
 			String id = data.select("id").text();
 			String name = data.select("name").text();
-			String likes = data.select("likes").text();
+			String likes = data.select("fan_count").text();
 			String talking_about_count = data.select("talking_about_count").text();
 			
 			output += id+",\""+name+"\","+likes+","+talking_about_count+"\n";
