@@ -25,8 +25,8 @@ public class FacebookExam {
 
 		String uri = 
 				"https://graph.facebook.com/v2.6"
-				+ "/search?q="
-				+ "&access_token=";
+				+ "/crazyck101/posts?fields=id,link,message,created_time,likes.limit(0).summary(true),reactions.type(HAHA).limit(0).summary(total_count)&since=1480849200&until=1480895999"
+				+ "&access_token=EAACEdEose0cBABZB5BRdO1wsill15dk0JNZBlv1TcRApXUOq2OaV26GFhgxAFCEoUM2WzKvhphJXmtNwzj4GZCZAVoV7GZC4PQmCGUt5KDWlZAZAZADtDm9ZATsZBN21ZAU0Lu7l4DXvX1jXR6hC34VRA8PVzlHbdf5LfDHLuuhaJFAOwZDZD";
 
 
 		Elements elems =
@@ -34,17 +34,19 @@ public class FacebookExam {
 				.getFromJson(uri)
 				.select("data");
 		
-		String output = "id,reactions";
+		String output = "id  likes reactions(HAHA) created_time"+"\n";
 
 		// 遂筆處理
 		for( Element data: elems ){
 			String id = data.select("id").text();
-
+			String created_time = data.select("created_time").text();
+			String reactions = data.select("reactions").text();
+			String likes = data.select("like").text();
 			// FIXIT
-			String reactions = "";
+//			String reactions = data.select("reactions").text();
 
 
-			output += id + "," + reactions + "\n";
+			output += id + "_" + likes +"_" + reactions+ "_" + created_time + "\n";
 		}
 
 		System.out.println( output );
