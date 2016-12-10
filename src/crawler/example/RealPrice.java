@@ -33,6 +33,7 @@ public class RealPrice {
 		System.out.println("鄉鎮市區,都市土地使用分區,土地區段位置或建物區門牌,總價元,單價每平方公尺");
 
 		for( Element elem: jsoupDoc.select("買賣") ){
+			System.out.print("\""+elem.select("交易年月日").text()+"\"");
 			System.out.print("\""+elem.select("鄉鎮市區").text()+"\"");
 			System.out.print(",\""+elem.select("都市土地使用分區").text()+"\"");
 			System.out.print(",\""+elem.select("土地區段位置或建物區門牌").text()+"\"");
