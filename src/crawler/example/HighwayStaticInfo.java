@@ -14,7 +14,7 @@ public class HighwayStaticInfo {
 		
 		// 遠端資料路徑
 		//String uri = "gz:http://tisvcloud.freeway.gov.tw/cms_value.xml.gz";
-		String uri = "http://tisvcloud.freeway.gov.tw/history/TDCS/M03A/";
+		String uri = "gz:http://tisvcloud.freeway.gov.tw/roadlevel_info.xml.gz";
 		System.out.println(
 				CrawlerPack.start()
 			    	.getFromXml(uri)
