@@ -40,13 +40,13 @@ public class FacebookExam {
 		for( Element data: elems ){
 			String id = data.select("id").text();
 			String created_time = data.select("created_time").text();
-			String reactions = data.select("reactions").text();
-			String likes = data.select("like").text();
+			String reactions = data.select("reactions total_count").text();
+			String likes = data.select("likes total_count").text();
 			// FIXIT
 //			String reactions = data.select("reactions").text();
 
 
-			output += id + "_" + likes +"_" + reactions+ "_" + created_time + "\n";
+			output += id + " " + likes +" " + reactions+ " " + created_time + "\n";
 		}
 
 		System.out.println( output );
