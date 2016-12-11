@@ -16,7 +16,7 @@ public class PttExample {
 		// set to debug level
 		//CrawlerPack.setLoggerLevel(SimpleLog.LOG_LEVEL_DEBUG);
 
-		// turn off logging
+		//// turn off logging
 		CrawlerPack.setLoggerLevel(SimpleLog.LOG_LEVEL_OFF);
 
 		// 遠端資料路徑
